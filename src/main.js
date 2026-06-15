@@ -1,5 +1,6 @@
 import './style.css';
 import { parseSchema, FORMATS } from './parse.js';
+import { parseBigQuerySchema } from './parser.js';
 import { layout } from './layout.js';
 import { Diagram } from './diagram.js';
 import { exportSVG } from './svg-export.js';
@@ -256,7 +257,7 @@ function rebuild({ arrange = false, restore = null } = {}) {
 
   let result;
   try {
-    result = parseSchema(sql, formatChoice);
+    result = dialect === 'bigquery' ? parseBigQuerySchema(sql) : parseSchema(sql, formatChoice);
   } catch (err) {
     statusEl.textContent = 'Parse error';
     statusEl.className = 'status err';

@@ -36,6 +36,13 @@ export const DIALECTS = {
       'DATE', 'TIME', 'TIMESTAMP_NTZ', 'TIMESTAMP_TZ', 'VARIANT', 'OBJECT',
       'ARRAY', 'BINARY', 'GEOGRAPHY'],
   },
+  bigquery: {
+    label: 'BigQuery',
+    default: 'STRING',
+    types: ['STRING', 'INT64', 'FLOAT64', 'NUMERIC', 'BIGNUMERIC', 'BOOL',
+      'BYTES', 'DATE', 'DATETIME', 'TIMESTAMP', 'TIME', 'JSON',
+      'ARRAY', 'STRUCT', 'GEOGRAPHY'],
+  },
 };
 
 export const DEFAULT_DIALECT = 'postgres';
